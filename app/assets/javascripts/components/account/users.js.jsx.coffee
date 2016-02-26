@@ -1,11 +1,11 @@
-@AccountUsers = React.createClass
+@Users = React.createClass
 
   getDefaultProps: ->
     users: React.PropTypes.array.isRequired
 
   render: ->
     renderUser = (user) =>
-      <AccountUser key={user.id} user={user} />
+      <User key={user.id} user={user} />
 
     <div className='row-fluid'>
       <div className='span12  scroll_container'>

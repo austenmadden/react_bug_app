@@ -1,4 +1,4 @@
-@AccountUserFilter = React.createClass
+@UserFilter = React.createClass
 
   getDefaultProps: ->
     onFilter: React.PropTypes.func.isRequired
@@ -10,7 +10,7 @@
       user: user
 
   filter: ->
-    filterText = @refs.AccountUserFilter.getDOMNode().value.trim().toLowerCase()
+    filterText = @refs.UserFilter.getDOMNode().value.trim().toLowerCase()
     userSearch = @createFilterSearch(@props.users)
     filteredUsers = _.chain(userSearch).filter((userSearch) ->
       userSearch.text.indexOf(filterText) != -1
@@ -24,6 +24,6 @@
     e.preventDefault()
 
   render: ->
-    <form id='account_user_filter' className='row-fluid' onSubmit={this.submit}>
-      <input type='search' id='account_user_filter_field' name='filter' placeholder='Filter users' ref='AccountUserFilter' className='span12' onKeyUp={@filter} />
+    <form id='user_filter' className='row-fluid' onSubmit={this.submit}>
+      <input type='search' id='user_filter_field' name='filter' placeholder='Filter users' ref='UserFilter' className='span12' onKeyUp={@filter} />
     </form>

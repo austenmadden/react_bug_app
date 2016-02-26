@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+puts "Creating demo accounts"
+30.times do |index|
+  User.create_with(first_name: 'Demo').find_or_create_by(last_name: "User#{index}")
+end
